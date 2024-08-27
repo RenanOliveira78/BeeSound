@@ -22,6 +22,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "linking": {
+      "prefixes": ["https://beesound.com", "beesound://"],
+      "config": {
+        "screens": {
+          "StartScreen": "start",
+          "WhiteScreen": "white"
+        }
+      } 
+    },
+    "scheme": "BeeSound"
   }
 }
