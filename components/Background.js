@@ -1,3 +1,4 @@
+// components/BackGround.js
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import Svg, { Path } from 'react-native-svg';

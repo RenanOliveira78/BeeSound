@@ -1,3 +1,4 @@
+// components/BigLogo.js
 import React from 'react';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { StyleSheet, View } from 'react-native';
