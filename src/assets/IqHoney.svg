@@ -1,0 +1,9 @@
+<Svg width="205" height="213" viewBox="0 0 205 213" fill="none" {...props}>
+<Path d="M122.202 72.6663H83.1346L63.601 106.5L83.1346 140.333H122.202L141.736 106.5L122.202 72.6663Z" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M24.5337 106.5L5 140.334L24.5337 174.167H63.601L83.1347 140.334" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M63.601 174.167L83.1346 208H122.202L141.736 174.167L122.202 140.333" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M141.736 174.167H180.803L200.337 140.334L180.803 106.5H141.736" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M180.803 106.5L200.337 72.6665L180.803 38.8331H141.736L122.202 72.6665" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M141.736 38.8333L122.202 5H83.1346L63.601 38.8333L83.1346 72.6667" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M63.601 38.8331H24.5337L5 72.6665L24.5337 106.5H63.601" stroke="#FDAC05" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</Svg>

@@ -6,6 +6,7 @@ import * as Linking from 'expo-linking';
 
 import WhiteScreen from './screens/WhiteScreen'; 
 import StartScreen from './screens/StartScreen';
+import Q1 from './screens/Q1';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ const linking = {
       screens: {
         StartScreen: 'start',
         WhiteScreen: 'white',
+        Q1: 'Q1',
       },
     },
   };
@@ -23,6 +25,7 @@ const linking = {
     return (
       <NavigationContainer linking={linking}>
         <Stack.Navigator>
+
           <Stack.Screen
             name="StartScreen"
             component={StartScreen}
@@ -33,6 +36,13 @@ const linking = {
             component={WhiteScreen}
             options={{ headerShown: true }} // Show header (back arrow) for WhiteScreen
           />
+
+          <Stack.Screen
+            name="Q1"
+            component={Q1}
+            options={{ headerShown: false }} 
+          />
+
         </Stack.Navigator>
       </NavigationContainer>
     );
