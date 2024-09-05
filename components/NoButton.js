@@ -1,10 +1,9 @@
 // NoButton.js
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Animated, TouchableOpacity, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-const PressableSvgButton = () => {
-  const [pressed, setPressed] = useState(false);
+const NoButton = ({ pressed, onPress }) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
   const handlePressIn = () => {
@@ -23,24 +22,20 @@ const PressableSvgButton = () => {
     }).start();
   };
 
-  const handlePress = () => {
-    setPressed(!pressed);
-  };
-
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
-        onPress={handlePress}
+        onPress={onPress}
         activeOpacity={1}
       >
         <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <Svg width="208" height="227" viewBox="0 0 208 227" fill="none" >
                 <Path
                 d="M93.5379 12.0112C100.016 8.28908 107.984 8.28908 114.462 12.0112L183.529 51.6952C190.048 55.4407 194.067 62.3853 194.067 69.9036V149.096C194.067 156.615 190.048 163.559 183.529 167.305L114.462 206.989C107.984 210.711 100.016 210.711 93.5379 206.989L24.4713 167.305C17.9525 163.559 13.9334 156.615 13.9334 149.096V69.9036C13.9334 62.3853 17.9525 55.4407 24.4713 51.6952L93.5379 12.0112Z"
-                fill={pressed ? '#D44C4C' : '#FE2323'} // Change color when pressed"
+                fill={pressed ? '#FE2323' : '#D44C4C' } // Change color when pressed"
                 />
                 <Path
                 d="M185.771 47.7934L116.704 8.10944C108.838 3.58968 99.1623 3.58968 91.2961 8.10944L22.2294 47.7934C14.3137 52.3415 9.43336 60.7743 9.43336 69.9036V149.096C9.43336 158.226 14.3137 166.658 22.2294 171.207L91.2961 210.891C99.1623 215.41 108.838 215.41 116.704 210.891L185.771 171.207C193.686 166.658 198.567 158.226 198.567 149.096V69.9036C198.567 60.7743 193.686 52.3415 185.771 47.7934Z"
@@ -73,4 +68,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default PressableSvgButton;
+export default NoButton;
