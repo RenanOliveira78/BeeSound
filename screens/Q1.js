@@ -12,7 +12,7 @@ import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 
 const Q1 = () => {
-  //sotre questions, handle diff svgs, text, whatever 
+  //sotre questions, handle diff svgs, text
   const questions = [
     {
       id: 1
