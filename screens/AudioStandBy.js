@@ -1,21 +1,27 @@
 // screens/AudioStandBy.js
 import React from 'react';
 import { TouchableOpacity, StyleSheet, View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import BackArrow from '../components/BackArrow';
 import MicButton from '../components/MicButton';
 
 const AudioStandBy = () => {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       
       <TouchableOpacity
         style={styles.backButton}
+        onPress={() => navigation.navigate('Map')} // Navigate to Map screen
       >
         <BackArrow />
         <Text style={styles.backText}>Voltar</Text>
       </TouchableOpacity>
 
-      <MicButton style={styles.micButton} />
+      <View style={styles.micButtonContainer}>
+        <MicButton />
+      </View>
 
       <Text style={styles.bottomText}>aperte para escutar</Text>
     </View>
@@ -49,9 +55,9 @@ const styles = StyleSheet.create({
     fontSize: 24, // Adjust the font size as needed
     fontWeight: '300', // Thin font weight
   },
-  micButton: {
+  micButtonContainer: {
     position: 'absolute',
-    top: 605, 
+    bottom: 220, // Adjust the distance from the bottom
     alignSelf: 'center', // Center horizontally
   },
 });

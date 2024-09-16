@@ -26,7 +26,30 @@ const IndicatorSvg = () => (
 </Svg>
 );
 
-const NavBar = ({}) => {
+const NavBar = () => {
+  // Create an animated value to track the position of the indicator
+  const [indicatorPosition] = useState(new Animated.Value(0));
+
+  const buttonWidth = 32; // Width of the button
+  const spaceBetweenButtons = 45; // Space between buttons
+  const middleButtonIndex = 1; // Index of the button that starts in the middle
+  const screenWidth = Dimensions.get('window').width;
+  const indicatorWidth = 74; // Width of the indicator
+
+  const animateIndicator = (toValue) => {
+    Animated.timing(indicatorPosition, {
+      toValue,
+      duration: 240, // Duration of the animation
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const handleButtonPress = (index) => {
+    const buttonOffset = (index - middleButtonIndex) * (buttonWidth + spaceBetweenButtons);
+    const newPosition = (screenWidth / 2 - indicatorWidth / 2) + buttonOffset;
+    animateIndicator(newPosition);
+  };
+
   return (
     <View style={styles.container}>
       {/* SVG Background for NavBar */}
@@ -37,15 +60,20 @@ const NavBar = ({}) => {
         </Svg>
       </View>
 
+      {/* Animated Indicator */}
+      <Animated.View style={[styles.indicator, { transform: [{ translateX: indicatorPosition }] }]}>
+        <IndicatorSvg />
+      </Animated.View>
+
       {/* Buttons inside the NavBar */}
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')}>
+        <TouchableOpacity style={styles.button} onPress={() => handleButtonPress(0)}>
           <ButtonIconDash />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
+        <TouchableOpacity style={styles.button} onPress={() => handleButtonPress(1)}>
           <ButtonIconMap />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Settings')}>
+        <TouchableOpacity style={styles.button} onPress={() => handleButtonPress(2)}>
           <ButtonIconSettings />
         </TouchableOpacity>
       </View>
@@ -79,6 +107,15 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 10,
+    alignItems: 'center',
+  },
+  indicator: {
+    position: 'absolute',
+    left: -0,
+    bottom: 6,
+    width: 74,
+    height: 70,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
