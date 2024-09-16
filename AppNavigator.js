@@ -7,6 +7,8 @@ import * as Linking from 'expo-linking';
 import WhiteScreen from './screens/WhiteScreen'; 
 import StartScreen from './screens/StartScreen';
 import Q1 from './screens/Q1';
+import Map from './screens/Map';
+import AudioStandBy from './screens/AudioStandBy';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +19,7 @@ const linking = {
         StartScreen: 'start',
         WhiteScreen: 'white',
         Q1: 'Q1',
+        Map: 'Map',
       },
     },
   };
@@ -31,6 +34,19 @@ const linking = {
             component={StartScreen}
             options={{ headerShown: false }} // Hide header for StartScreen
           />
+
+          <Stack.Screen
+            name="Map"
+            component={Map}
+            options={{ headerShown: false }} // Show header (back arrow) for WhiteScreen
+          />
+
+          <Stack.Screen
+            name="AudioStandBy"
+            component={AudioStandBy}
+            options={{ headerShown: false }} // Show header (back arrow) for WhiteScreen
+          />
+
           <Stack.Screen
             name="WhiteScreen"
             component={WhiteScreen}
