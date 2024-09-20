@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, StyleSheet, Animated, Dimensions } from 'react-native';
 import Svg, { Path, Rect } from 'react-native-svg';
 
@@ -27,6 +27,7 @@ const IndicatorSvg = () => (
 );
 
 const NavBar = () => {
+
   // Create an animated value to track the position of the indicator
   const [indicatorPosition] = useState(new Animated.Value(0));
 
@@ -49,6 +50,11 @@ const NavBar = () => {
     const newPosition = (screenWidth / 2 - indicatorWidth / 2) + buttonOffset;
     animateIndicator(newPosition);
   };
+
+  useEffect(() => {
+    // Set the initial position of the indicator to the middle button
+    handleButtonPress(1);
+  }, []);
 
   return (
     <View style={styles.container}>
