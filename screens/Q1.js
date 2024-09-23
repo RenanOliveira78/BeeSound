@@ -12,7 +12,7 @@ import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 
 const Q1 = () => {
-  //sotre questions, handle diff svgs, text, whatever 
+  //sotre questions, handle diff svgs, text
   const questions = [
     {
       id: 1
@@ -176,20 +176,19 @@ const Q1 = () => {
 
   useEffect(() => {
     if (currentQuestionIndex === questions.length - 1 && pressedButton !== null) {
-      // Ensure state is updated before saving CSV
       const timer = setTimeout(() => {
         saveCSV();
-      }, 100); // Delay to ensure state update
+      }, 100);
       return () => clearTimeout(timer);
     }
-  }, [currentQuestionIndex, pressedButton]); // Also listen to pressedButton changes
+  }, [currentQuestionIndex, pressedButton]); //Also listen to pressedButton changes
   
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      // Move to the start screen if it's the last question
+      //Move to the start screen if its the last question
       navigation.navigate('StartScreen');
     }
   };
@@ -345,7 +344,7 @@ const styles = StyleSheet.create({
     width: 385,
     height: 96,
     top: 99, 
-    transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }], // Scale the rectangle
+    transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }], //for scaling the rectangle
   },
   rectangleText: {
     color: 'white',

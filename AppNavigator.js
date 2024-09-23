@@ -9,6 +9,8 @@ import StartScreen from './screens/StartScreen';
 import Q1 from './screens/Q1';
 import FormList from './screens/FormList';
 import Profile from './screens/Profile';
+import Map from './screens/Map';
+import AudioStandBy from './screens/AudioStandBy';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,7 @@ const linking = {
         Q1: 'Q1',
         FormList: 'formlist',
         Profile: 'profile',
+        Map: 'Map',
       },
     },
   };
@@ -35,6 +38,19 @@ const linking = {
             component={StartScreen}
             options={{ headerShown: false }} // Hide header for StartScreen
           />
+
+          <Stack.Screen
+            name="Map"
+            component={Map}
+            options={{ headerShown: false }} // Show header (back arrow) for WhiteScreen
+          />
+
+          <Stack.Screen
+            name="AudioStandBy"
+            component={AudioStandBy}
+            options={{ headerShown: false }} // Show header (back arrow) for WhiteScreen
+          />
+
           <Stack.Screen
             name="WhiteScreen"
             component={WhiteScreen}

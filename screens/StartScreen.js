@@ -36,7 +36,7 @@ export default function StartScreen({ navigation }) {
       </TouchableOpacity>
 
       <View style={styles.entrarButtonContainer}>
-        <EntrarButton onPress={() => navigation.navigate('Q1')} />
+        <EntrarButton onPress={() => navigation.navigate('Map')} />
       </View>
       <StatusBar style="auto" />
     </View>
@@ -71,9 +71,8 @@ const styles = StyleSheet.create({
     marginBottom: -4,
   },
   forgotPasswordButton: {
-    marginTop: 280,
-    paddingVertical: 10, // Adjust as needed
-    paddingHorizontal: 20, // Adjust as needed
+    position: 'absolute',
+    top: 580,
   },
   forgotPasswordLabel: {
     color: 'grey',
