@@ -31,7 +31,7 @@ const AudioStandBy = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#262626', // Set background color to white
+    backgroundColor: '#262626', 
     justifyContent: 'center', // Center content vertically
     alignItems: 'center', // Center content horizontally
   },
