@@ -16,7 +16,7 @@ export default function StartScreen({ navigation }) {
     <View style={styles.container}>
       <Background />
       <View style={styles.logoContainer}>
-        <BigLogo />
+        <BigLogo onPress={() => navigation.navigate('FormList')} />
       </View>
 
       {/* Typable TypeBars */}

@@ -7,6 +7,8 @@ import * as Linking from 'expo-linking';
 import WhiteScreen from './screens/WhiteScreen'; 
 import StartScreen from './screens/StartScreen';
 import Q1 from './screens/Q1';
+import FormList from './screens/FormList';
+import Profile from './screens/Profile';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +19,8 @@ const linking = {
         StartScreen: 'start',
         WhiteScreen: 'white',
         Q1: 'Q1',
+        FormList: 'formlist',
+        Profile: 'profile',
       },
     },
   };
@@ -36,11 +40,20 @@ const linking = {
             component={WhiteScreen}
             options={{ headerShown: true }} // Show header (back arrow) for WhiteScreen
           />
-
           <Stack.Screen
             name="Q1"
             component={Q1}
             options={{ headerShown: false }} 
+          />
+          <Stack.Screen
+            name="FormList"
+            component={FormList}
+            options={{ headerShown: false }} 
+          />
+          <Stack.Screen 
+            name="Profile"
+            component={Profile}
+            options={{ headerShown: false }}
           />
 
         </Stack.Navigator>

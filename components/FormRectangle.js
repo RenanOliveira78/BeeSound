@@ -1,0 +1,18 @@
+import React from 'react';
+import Svg, { Path, Mask, G } from 'react-native-svg';
+
+const FormRectangle = (props) => (
+  <Svg width="374" height="86" viewBox="0 0 374 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <Mask id="path-1-inside-1_307_732" fill="white">
+  <Path d="M0 10C0 4.47715 4.47715 0 10 0H288V86H10C4.47715 86 0 81.5228 0 76V10Z"/>
+  </Mask>
+  <Path d="M0 10C0 4.47715 4.47715 0 10 0H288V86H10C4.47715 86 0 81.5228 0 76V10Z" fill="#3B3B3B"/>
+  <Path d="M-1 10C-1 3.92487 3.92487 -1 10 -1H288V1H10C5.02944 1 1 5.02944 1 10H-1ZM288 87H10C3.92487 87 -1 82.0751 -1 76H1C1 80.9706 5.02944 85 10 85H288V87ZM10 87C3.92487 87 -1 82.0751 -1 76V10C-1 3.92487 3.92487 -1 10 -1V1C5.02944 1 1 5.02944 1 10V76C1 80.9706 5.02944 85 10 85V87ZM288 0V86V0Z" fill="white" mask="url(#path-1-inside-1_307_732)"/>
+  <Path d="M288.5 0.5H364C369.247 0.5 373.5 4.75329 373.5 10V76C373.5 81.2467 369.247 85.5 364 85.5H288.5V0.5Z" fill="#FDAC05" stroke="white"/>
+  <Path d="M352.898 42.999C352.898 55.0935 343.094 64.898 330.999 64.898C318.905 64.898 309.1 55.0935 309.1 42.999C309.1 30.9045 318.905 21.1 330.999 21.1C343.094 21.1 352.898 30.9045 352.898 42.999Z" stroke="black" stroke-width="0.2"/>
+  <Path d="M327.524 52.2617L336.787 42.999L327.524 33.7363" fill="#FFAC00"/>
+  <Path d="M327.524 52.2617L336.787 42.999L327.524 33.7363" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </Svg>
+);
+
+export default FormRectangle;
