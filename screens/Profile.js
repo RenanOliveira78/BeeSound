@@ -46,8 +46,8 @@ export default function Profile({ navigation }) {
                     <Text style={styles.menuText}>Privacidade e segurança</Text>
                     <MaterialIcons name="navigate-next" size={24} color="#BDBDBD" />
                 </TouchableOpacity>
-                <View style={styles.divider} />
-                <TouchableOpacity style={styles.menuItem}>
+                <View style={styles.divider}/>
+                <TouchableOpacity style={styles.menuItem} onPress={() => navigation.goBack()}>
                     <Text style={styles.menuText}>Sair</Text>
                 </TouchableOpacity>
 

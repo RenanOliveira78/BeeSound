@@ -14,11 +14,11 @@ export default function FormList({ route, navigation }) {
     const { dateText, key } = route.params; 
 
     const formData = [
-        {criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
-        {criaPresente: false, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
-        {criaPresente: false, rainha: true, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: false},
-        {criaPresente: true, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: true, sintomasEnxameacao: true},
-        {criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: true, espaco: false, sintomasEnxameacao: false},
+        {key: 0, criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
+        {key: 1, criaPresente: false, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
+        {key: 2, criaPresente: false, rainha: true, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: false},
+        {key: 3, criaPresente: true, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: true, sintomasEnxameacao: true},
+        {key: 4, criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: true, espaco: false, sintomasEnxameacao: false},
     ];
 
     return (
