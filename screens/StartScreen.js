@@ -31,7 +31,7 @@ export default function StartScreen({ navigation }) {
         <TypeBar value={text2} onChangeText={setText2} />
       </View>
 
-      <TouchableOpacity style={styles.forgotPasswordButton} onPress={() => {/* Handle password recovery */}}>
+      <TouchableOpacity style={styles.forgotPasswordButton} onPress={() => navigation.navigate('Q1')}>
         <Text style={styles.forgotPasswordLabel}>Esqueci minha senha</Text>
       </TouchableOpacity>
 
