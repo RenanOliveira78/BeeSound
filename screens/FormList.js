@@ -12,11 +12,11 @@ export default function FormList({ navigation }) {
     const [searchText, setSearchText] = useState('');
 
     const formData = [
-        { key: 1, dateText: '13/11/2021 11:24:21', syncText: 'Rainha Presente', queenStatus: true},
-        { key: 2, dateText: '14/11/2021 12:30:45', syncText: 'Rainha Ausente', queenStatus: false},
-        { key: 3, dateText: '15/11/2021 13:45:00', syncText: 'Rainha Ausente', queenStatus: false},
-        { key: 4, dateText: '20/11/2021 15:53:00', syncText: 'Rainha Presente', queenStatus: true},
-        { key: 5, dateText: '22/11/2021 06:12:00', syncText: 'Rainha Presente', queenStatus: true},
+        { key: 0, dateText: '13/11/2021 11:24:21', syncText: 'Rainha Presente', queenStatus: true},
+        { key: 1, dateText: '14/11/2021 12:30:45', syncText: 'Rainha Ausente', queenStatus: false},
+        { key: 2, dateText: '15/11/2021 13:45:00', syncText: 'Rainha Ausente', queenStatus: false},
+        { key: 3, dateText: '20/11/2021 15:53:00', syncText: 'Rainha Presente', queenStatus: true},
+        { key: 4, dateText: '22/11/2021 06:12:00', syncText: 'Rainha Presente', queenStatus: true},
     ];
 
     return (
@@ -51,11 +51,11 @@ export default function FormList({ navigation }) {
                 {formData.map((item) => (
                     <View style={styles.buttonContainer}>
                         <FormButton 
-                        key={item.id} 
+                        key={item.key} 
                         dateText={item.dateText} 
                         syncText={item.syncText} 
                         queenStatus={item.queenStatus}
-                        onPress={() => navigation.navigate('DisplayForms', { dateText: item.dateText })}
+                        onPress={() => navigation.navigate('DisplayForms', { dateText: item.dateText, key: item.key })}
                     /> 
                     </View>
                 ))}

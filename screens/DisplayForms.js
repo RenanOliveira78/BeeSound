@@ -11,10 +11,14 @@ import FormButton from "../components/FormButton";
 
 export default function FormList({ route, navigation }) {
     const [searchText, setSearchText] = useState('');
-    const { dateText } = route.params; 
+    const { dateText, key } = route.params; 
 
     const formData = [
-        {criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true}
+        {criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
+        {criaPresente: false, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: true},
+        {criaPresente: false, rainha: true, nutriente: true, ausenciaFatoresEstresse: false, espaco: false, sintomasEnxameacao: false},
+        {criaPresente: true, rainha: false, nutriente: true, ausenciaFatoresEstresse: false, espaco: true, sintomasEnxameacao: true},
+        {criaPresente: true, rainha: false, nutriente: false, ausenciaFatoresEstresse: true, espaco: false, sintomasEnxameacao: false},
     ];
 
     return (
@@ -65,7 +69,7 @@ export default function FormList({ route, navigation }) {
                         Todos os estágios de cria presentes nas quantidades adequadas (Ovos 1-3, Larva 3-6, Pupa 7-21) e estrutura
                         etária de abelhas adultas suficiente para cuidar da cria e realizar as tarefas da colônia?
                         </Text>
-                        {formData[0].criaPresente ?
+                        {formData[key].criaPresente ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
@@ -84,7 +88,7 @@ export default function FormList({ route, navigation }) {
                         <Text style={styles.itemText}>
                         Uma rainha jovem (idade &lt; 1 ano), produtiva e em atividade de postura, está presente?
                         </Text>
-                        {formData[0].rainha ?
+                        {formData[key].rainha ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
@@ -104,7 +108,7 @@ export default function FormList({ route, navigation }) {
                         Nutrientes suficientes (água, pasto apícola e reservas de alimento - pólen e néctar - disponíveis) dentro ou
                         fora da colmeia, e crias jovens sendo alimentadas?
                         </Text>
-                        {formData[0].nutriente ?
+                        {formData[key].nutriente ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
@@ -124,7 +128,7 @@ export default function FormList({ route, navigation }) {
                         Ausência de fatores de estresse que poderiam levar a uma redução na sobrevivência da colônia e/ou no seu
                         potencial de crescimento?
                         </Text>
-                        {formData[0].ausenciaFatoresEstresse ?
+                        {formData[key].ausenciaFatoresEstresse ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
@@ -144,7 +148,7 @@ export default function FormList({ route, navigation }) {
                         Espaço adequado (nem grande nem pequeno demais) para o tamanho atual - e a curto prazo - da colônia que seja
                         higiênico, seguro e com espaço para postura de ovos?
                         </Text>
-                        {formData[0].espaco ?
+                        {formData[key].espaco ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
@@ -163,7 +167,7 @@ export default function FormList({ route, navigation }) {
                         <Text style={styles.itemText}>
                         Presença de sintomas de enxaemação (presença de células de zangão, realeiras ou zangões adultos)?
                         </Text>
-                        {formData[0].sintomasEnxameacao ?
+                        {formData[key].sintomasEnxameacao ?
                         <Svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
                             <Path d="M51.6147 13.9019L32.5 2.86603C30.3342 1.6156 27.6658 1.6156 25.5 2.86603L6.38526 13.9019C4.21946 15.1524 2.88526 17.4632 2.88526 19.9641V42.0359C2.88526 44.5368 4.21946 46.8476 6.38526 48.0981L25.5 59.134C27.6658 60.3844 30.3342 60.3844 32.5 59.134L51.6147 48.0981C53.7805 46.8476 55.1147 44.5368 55.1147 42.0359V19.9641C55.1147 17.4632 53.7805 15.1524 51.6147 13.9019Z" fill="#47F30B" stroke="black" stroke-width="2"/>
                             <Path d="M25.2953 38.827C25.1298 38.8272 24.9658 38.7947 24.8129 38.7313C24.6599 38.6679 24.521 38.575 24.4041 38.4577L19.3622 33.416C19.1289 33.179 18.9987 32.8594 19 32.5269C19.0013 32.1943 19.134 31.8758 19.3691 31.6406C19.6043 31.4055 19.9229 31.2728 20.2554 31.2715C20.588 31.2702 20.9076 31.4004 21.1446 31.6337L26.1865 36.6754C26.3627 36.8517 26.4827 37.0763 26.5313 37.3207C26.58 37.5652 26.555 37.8186 26.4596 38.0489C26.3642 38.2792 26.2027 38.476 25.9955 38.6145C25.7882 38.753 25.5446 38.827 25.2953 38.827Z" fill="black"/>
