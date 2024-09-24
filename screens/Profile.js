@@ -47,7 +47,7 @@ export default function Profile({ navigation }) {
                     <MaterialIcons name="navigate-next" size={24} color="#BDBDBD" />
                 </TouchableOpacity>
                 <View style={styles.divider}/>
-                <TouchableOpacity style={styles.menuItem} onPress={() => navigation.goBack()}>
+                <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('StartScreen')}>
                     <Text style={styles.menuText}>Sair</Text>
                 </TouchableOpacity>
 
