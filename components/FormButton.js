@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from 'react-native-svg';
 
 import FormRectangle from "../components/FormRectangle";
 
-export default function FormButton({ dateText, syncText, queenStatus }) {
+export default function FormButton({ dateText, syncText, queenStatus, onPress }) {
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             <FormRectangle />
             <View style={styles.itemContainer}>
                 <View style={styles.infoSection}>
@@ -42,7 +42,7 @@ export default function FormButton({ dateText, syncText, queenStatus }) {
                     </View>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 

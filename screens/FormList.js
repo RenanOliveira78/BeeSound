@@ -11,11 +11,12 @@ import FormButton from "../components/FormButton";
 export default function FormList({ navigation }) {
     const [searchText, setSearchText] = useState('');
 
-    // Sample array of data
     const formData = [
-        { id: 1, dateText: '13/11/2021 11:24:21', syncText: 'Rainha Presente', queenStatus: true},
-        { id: 2, dateText: '14/11/2021 12:30:45', syncText: 'Rainha Ausente', queenStatus: false},
-        { id: 3, dateText: '15/11/2021 13:45:00', syncText: 'Rainha Ausente', queenStatus: false},
+        { key: 1, dateText: '13/11/2021 11:24:21', syncText: 'Rainha Presente', queenStatus: true},
+        { key: 2, dateText: '14/11/2021 12:30:45', syncText: 'Rainha Ausente', queenStatus: false},
+        { key: 3, dateText: '15/11/2021 13:45:00', syncText: 'Rainha Ausente', queenStatus: false},
+        { key: 4, dateText: '20/11/2021 15:53:00', syncText: 'Rainha Presente', queenStatus: true},
+        { key: 5, dateText: '22/11/2021 06:12:00', syncText: 'Rainha Presente', queenStatus: true},
     ];
 
     return (
@@ -30,7 +31,11 @@ export default function FormList({ navigation }) {
                     <BackArrow />
                 </TouchableOpacity>
                 <View style={styles.searchBarContainer}>
-                    <SearchBar value={searchText} onChangeText={setSearchText} />
+                    <SearchBar 
+                    value={searchText}
+                    onChangeText={setSearchText}
+                    onPress={() => navigation.navigate('DisplayForms')}
+                    />
                     <TouchableOpacity>
                         <Ionicons 
                             name="person-circle-outline"
@@ -45,10 +50,13 @@ export default function FormList({ navigation }) {
             <ScrollView contentContainerStyle={styles.contentContainer}>
                 {formData.map((item) => (
                     <View style={styles.buttonContainer}>
-                        <FormButton key={item.id} 
+                        <FormButton 
+                        key={item.id} 
                         dateText={item.dateText} 
                         syncText={item.syncText} 
-                        queenStatus={item.queenStatus} /> 
+                        queenStatus={item.queenStatus}
+                        onPress={() => navigation.navigate('DisplayForms', { dateText: item.dateText })}
+                    /> 
                     </View>
                 ))}
             </ScrollView>
@@ -80,10 +88,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 50,
-        paddingHorizontal: 65,
+        paddingHorizontal: 10,
     },
     profileIcon: {
-        marginLeft: 5,
+        marginLeft: -50,
     },
     contentContainer: {
         flexGrow: 1,

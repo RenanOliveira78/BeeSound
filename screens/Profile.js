@@ -32,7 +32,7 @@ export default function Profile({ navigation }) {
                     <MaterialIcons name="person" size={60} color="#BDBDBD" />
                     </View>
                     <View style={styles.profileInfo}>
-                    <Text style={styles.profileName}>CARLOS VICTOR G MOURA</Text>
+                    <Text style={styles.profileName}>CARLOS VICTOR</Text>
                     <TouchableOpacity>
                         <Text style={styles.profileDetails}>Mostrar dados da conta</Text>
                     </TouchableOpacity>

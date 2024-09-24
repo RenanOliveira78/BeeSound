@@ -11,6 +11,7 @@ import FormList from './screens/FormList';
 import Profile from './screens/Profile';
 import Map from './screens/Map';
 import AudioStandBy from './screens/AudioStandBy';
+import DisplayForms from './screens/DisplayForms';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +70,11 @@ const linking = {
           <Stack.Screen 
             name="Profile"
             component={Profile}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name="DisplayForms"
+            component={DisplayForms}
             options={{ headerShown: false }}
           />
 

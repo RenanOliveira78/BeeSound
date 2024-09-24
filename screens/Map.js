@@ -52,7 +52,7 @@ export default function Map() {
                 ))}
         </MapView>
 
-        <MapSearchBar />
+        <MapSearchBar navigation={navigation}/>
 
 
         <NavBar/>
